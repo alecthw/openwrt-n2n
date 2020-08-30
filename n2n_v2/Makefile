@@ -34,12 +34,13 @@ endef
 define Package/n2n-edge
   $(call Package/n2n/Default)
   TITLE+= client (edge node)
-  DEPENDS+=+kmod-tun +resolveip +libopenssl +libcap
+  DEPENDS+=+kmod-tun +resolveip +libopenssl +libcap +libzstd
 endef
 
 define Package/n2n-supernode
   $(call Package/n2n/Default)
   TITLE+= server (supernode)
+  DEPENDS+=+libcap
 endef
 
 define Package/n2n-edge/description
