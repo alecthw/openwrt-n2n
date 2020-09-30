@@ -73,7 +73,8 @@ mtu = s:option(Value, "mtu", translate("MTU"))
 mtu.datatype = "range(1,1500)"
 mtu.optional = false
 
-supernode = s:option(Value, "supernode", translate("Supernode IP address"))
+supernode = s:option(Value, "supernode", translate("Supernode Host"))
+supernode.datatype = "host"
 supernode.optional = false
 
 port = s:option(Value, "port", translate("Supernode Port"))
