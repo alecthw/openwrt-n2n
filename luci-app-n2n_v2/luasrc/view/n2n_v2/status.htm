@@ -1,12 +1,12 @@
 <script type="text/javascript">//<![CDATA[
 XHR.poll(5, '<%=url([[admin]], [[vpn]], [[n2n_v2]], [[status]])%>', null,
     function(x, data) {
-        var status = document.getElementById('n2n_status');
-        if (data && status) {
+        var tb = document.getElementById('n2n_v2_status');
+        if (data && tb) {
             if (data.running) {
-                status.innerHTML = "<em><b style='color:green;'>N2N v2 VPN <%:RUNNING%></b></em>";
+                tb.innerHTML = "<em><b style='color:green;'>N2N v2 VPN <%:RUNNING%></b></em>";
             } else {
-                status.innerHTML = "<em><b style='color:red;'>N2N v2 VPN <%:NOT RUNNING%></b></em>";
+                tb.innerHTML = "<em><b style='color:red;'>N2N v2 VPN <%:NOT RUNNING%></b></em>";
             }
         }
     }
@@ -14,7 +14,7 @@ XHR.poll(5, '<%=url([[admin]], [[vpn]], [[n2n_v2]], [[status]])%>', null,
 //]]>
 </script>
 <fieldset class="cbi-section">
-    <p id="n2n_status">
+    <p id="n2n_v2_status">
         <em><%:Collecting data...%></em>
     </p>
 </fieldset>
